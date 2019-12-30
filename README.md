@@ -1,5 +1,7 @@
 # python3 入门与进阶
 
+<www.python.org>
+
 - 基础语法，从最基本的变量到复杂的高阶函数
 - 面向对象
 - 常见误区
@@ -9,7 +11,7 @@
 
 ## 认识python
 
-- 人生苦短，我用python
+- 人生苦短，我用python (Life is Simple，I Use Python)
 - 作者 Guido van Rossum 在1989年的圣诞节为了打发时间写出了python
 - 优雅、明确、简单是python的设计哲学
 - python的设计目标之一是让代码具备高度的可阅读性
@@ -17,9 +19,10 @@
 
 ## python 特点
 
-Life is Simple，I Use Python
-
-- 简洁
+- 是一种动态语言
+- 被设计成可扩充的
+- 跨平台
+- 语法简洁、开发效率高、维护成本低
 - 易于学习，易于上手难于精通
 - python 是面向对象的语言
 - 简洁胜于复杂
@@ -28,6 +31,9 @@ Life is Simple，I Use Python
 ## python 缺点
 
 - 相较于C、C++、java，运行效率慢
+- 有两个版本
+- python核心团队计划在2020年停止支持python2
+- python2.7 是最后一个2x版本
 
 ## 一个学习编程的经典误区
 
@@ -57,10 +63,31 @@ python 高性能与优化：
 ## python 环境安装
 
 - Windows 下一键环境安装包
-  - 登录 <www.python.org> 在 Downloads 处下载
-  - 选择自定义安装
+  - 登录 <www.python.org> 在 Downloads 处下载，windows X86-64 executable installer
+  - 选择自定义安装,勾选上 Add Python to PATH
   - 安装之后在 Windows 的搜索栏处搜索python 选择 IDLE 打开编辑器
+- MacOS 下载 Mac OS X 64-bit/32-bit install
+  - 在命令行下 直接敲 python 会调用默认安装的 2.x版本，需要输入 python3
+- Linux
+  - 第一个方法，需要编译源码安装，下载 XZ compressed source tarball
+  - 第二个方法，centos 上使用 yum 安装，先引入一个安装源：`yum install epel-release`,然后`yum install python36`,命令行输入 python36 进入。
 - python2.x 和 python3.x
+- 退出 shell 需要输入`exit()`
+- IDE：PyCharm
+
+## python 快速入门
+
+- 基本语法规则
+  - 文件开头加上`#!/usr/bin/python3`
+  - 单行注释：`#`开头
+  - 多行注释：`'''`或者`"""`
+- 变量与字符串
+- 函数与模块
+- 流程控制
+- 内置数据结构
+- 类与面向对象
+- 标准库
+- 包管理器
 
 ## 什么是代码？什么是写代码
 
