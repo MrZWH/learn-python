@@ -42,6 +42,16 @@ Life is Simple，I Use Python
 x,y = y,x
 ```
 
+python 高性能与优化：  
+
+同样一个功能，可以有数个乃至数十种写法，但每种写法的性能与美观度是不同的。选择性能最高又易于理解的写法才是正确的。
+
 ## python 环境安装
+
+- Windows 下一键环境安装包
+  - 登录 <www.python.org> 在 Downloads 处下载
+  - 选择自定义安装
+  - 安装之后在 Windows 的搜索栏处搜索python 选择 IDLE 打开编辑器
+- python2.x 和 python3.x
 
 3
