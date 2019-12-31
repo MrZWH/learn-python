@@ -149,4 +149,268 @@ python 高性能与优化：
 将其它进制转换为十六进制：`hex(0o111)`  
 将其它进制转换为八进制：`oct(0x111)`  
 
+### 字符串
+
+python 中没有字符类型
+
+```python
+a = '21313'
+b = "AAVA"
+c = """
+多行字符串
+多行
+多行
+"""
+```
+
+只想更改字符串中某几个字符怎么做：
+
+```python
+str1 = "abcdefg"
+print( str1[:3] + "123" + str1[3:] )
+# 得到 abc123defg
+```
+
+冒号左边表示截取的起始位置，右边表示截取的结束位置，左边包含右边不包含。  
+
+格式化字符串：
+
+```python
+print('ABCDEFG%d' %(12345))
+# ->> ABCDEFG12345
+
+# d 字母是根据后面的数据类型决定的，如果要加入字符串则变为 %s
+
+# 要转变位 16进制数如下
+print('%x' %(100))
+# ->> 64
+
+# 格式化复杂字符串
+print("name: %s, age: %d" %("Tom", 21))
+# ->> name: Tom, age: 21
+
+```
+
+### 函数
+
+```python
+"""
+def 函数名 (参数列表)：  
+    函数体  
+"""
+def hello( str ):
+  print("hello: %s" %(str))
+
+hello("Tom")
+
+def function01( a, b):
+  return a + b
+
+print(function01(3, 4))
+
+
+def function01( a=0, b=0):
+  return a * b
+```
+
+#### 变量作用域
+
+- L（Local） 局部作用域
+- E（Enclosing）闭包函数外的函数中
+- G（Global）全局作用域
+- B（Built-in）内建作用域
+
+`x = int(32)` 内建作用域，作用域范围在小括号`()`内  
+`g_a = 0` 全局作用域  
+
+```python
+def function03():
+  o_c = 1 # 闭包函数外的函数中
+  def function04():
+    i_b = 3 # 局部作用域
+```
+
+在刚创建函数时，函数体内会有`pass`，表示占位，有内容时需去掉。
+
+### 模块
+
+模块是一个包含所有你定义的函数或变量的文件，其后缀名是 `.py`。  
+
+python 中内置了很多模块，是 python 的标准库。  
+
+```python
+import sys
+
+print(sys.path)
+
+from module01 import test
+
+# 查看模块提供了什么
+
+dir(sys)
+```
+
+### 流程控制
+
+- 条件控制
+- 循环语句
+
+```python
+"""
+if condition_1:
+  statement_block_1
+elif condition_2:
+  statement_block_2
+else:
+  statement_block_3
+"""
+
+# while 循环语句
+"""
+while 判断条件:
+  语句
+"""
+
+"""
+n = 100
+sum = 0
+counter = 1
+while counter <=n:
+  sum = sum + counter
+  couter += 1
+
+print("sum: ", sum)
+
+while True:
+  mun = int(input("请输入一个数字："))
+  print("输入的数字是：", mun)
+
+print("循环结束！")
+"""
+
+counter = 0
+while counter < 3:
+  print("counter:", counter)
+  counter += 1
+else:
+  print("counter", counter)
+
+
+# for 循环语句
+"""
+for <variable> in <sequence>:
+  <statement>
+"""
+
+"""
+for a in [1,2,3,4,5,6,7]:
+  print("a = ", a)
+else:
+  print("a>7!")
+"""
+
+"""
+range()函数
+"""
+for a in range(0,5):
+  print("a = ", a)
+# -> a = 0
+# -> a = 1
+# -> a = 2
+# -> a = 3
+# -> a = 4
+for a in range(3,5):
+  print("a = ", a)
+# -> a = 3
+# -> a = 4
+
+for a in range(1,5,2):
+  print("a = ", a)
+# -> a = 1
+# -> a = 3
+```
+
+### 内置数据结构
+
+- List（列表）
+  - 可以看作是数据 `[var1, var2, var3]`
+- Tuple（元组）
+  - 和 List 相近，但其内部的值不可改变 `(var1, var2, var3)`
+- Sets（集合）
+  - `{var1, var2, var3}` 内部的元素不可重复
+- Dictionary（字典）
+  - `{key1:var1, key2:var2, key3:var3}`
+
+```python
+# List
+
+list = ['abc', 123, 3.14, True]
+print(list) # -> ['abc', 123, 3.14, True]
+print(list[0]) # -> abc
+print(list[3]) # -> True
+
+list2 = ['list2str', 100]
+print(list + list2) # -> ['abc', 123, 3.14, True, 'list2str', 100]
+
+list[0] = "ABC"
+list[1:3] = [321, 99.99]
+print(list) # -> ['abc', 321, 99.99, True]
+
+dir(list)
+
+# Tuple
+
+tuple = ("abc", 123, 3.14, True)
+print(tuple) # -> ('abc', 123, 3.14, True)
+print(tuple[2]) # -> 3.14
+print(tuple[1:3]) # -> (123, 3.14)
+print(tuple * 3) # 元组内容输出三次 -> ('abc', 123, 3.14, True,'abc', 123, 3.14, True,'abc', 123, 3.14, True)
+
+"""
+string 元组 列表 都属于序列
+"""
+
+for a in tuple
+  print(a)
+
+# Sets
+
+set1 = {"Tom", "Marry", "Jack", "Rose", "Tom"}
+set2 = set("abckde")
+print(set1) # -> {"Tom", "Marry", "Jack", "Rose"}
+
+if "Jack" in set1:
+  print("Jack 在集合中")
+else:
+  print("not in")
+
+set3 = set("1235abs")
+print(set2)
+print(set3)
+
+print(set2 - set3) # 计算差集
+print(set2 | set3) # 计算并集
+print(set2 & set3) # 计算交集
+print(set2 ^ set3) # 计算不同值存在的元素
+
+# 字典
+
+dict = {}
+dict['key1'] = 1
+dict['key2'] = 200
+dict[100] = "ABC"
+
+print(dict) # -> {'key1':1, 'key2': 200, 100: 'ABC'}
+print(dict['key1'])
+print(dict[100])
+
+```
+
+## 实战壁纸爬虫
+
+- 每天定时抓取Bing搜索的壁纸并保存在本地
+  - 分析 Bing 搜索的页面结构
+  - 分析Bing搜索的壁纸接口
+  - 根据分析的结果编码实现壁纸爬虫
+
 3 33：36
